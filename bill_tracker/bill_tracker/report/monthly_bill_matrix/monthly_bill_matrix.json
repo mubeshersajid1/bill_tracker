@@ -1,0 +1,31 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [],
+ "creation": "2026-09-12 01:08:17.668922",
+ "disable_prepared_report_automation": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "doctype_to_sync": [],
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": null,
+ "modified": "2026-09-12 01:08:17.668922",
+ "modified_by": "Administrator",
+ "module": "Bill Tracker",
+ "name": "Monthly Bill Matrix",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Bill Payment",
+ "report_name": "Monthly Bill Matrix",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ],
+ "snapshot_report": 0,
+ "timeout": 0
+}

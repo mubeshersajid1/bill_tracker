@@ -1,0 +1,13 @@
+{
+ "creation": "2026-09-12 01:46:28.933172",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart Source",
+ "idx": 0,
+ "modified": "2026-09-12 01:46:28.933172",
+ "modified_by": "Administrator",
+ "module": "Bill Tracker",
+ "name": "My Chart Source",
+ "owner": "Administrator",
+ "source_name": "My Chart Source",
+ "timeseries": 0
+}

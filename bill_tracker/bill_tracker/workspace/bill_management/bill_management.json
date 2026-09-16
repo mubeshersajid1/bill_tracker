@@ -1,0 +1,61 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"pJjgjxR-yB\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Bill Management</span>\",\"col\":12}},{\"id\":\"Ni3HkZTmln\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dashboard\",\"col\":3}},{\"id\":\"jlsiQT6RAl\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Bill Category\",\"col\":3}},{\"id\":\"E7mDJMHhnm\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Bill Payment\",\"col\":3}},{\"id\":\"iLy83iY6t2\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports</b></span>\",\"col\":12}},{\"id\":\"ZSN6wJkLIe\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Monthly Bill Status\",\"col\":3}}]",
+ "creation": "2026-09-12 00:39:26.565431",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "money-coins-1",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Bill Management",
+ "links": [],
+ "modified": "2026-09-13 22:55:21.227733",
+ "modified_by": "Administrator",
+ "module": "Bill Tracker",
+ "name": "Bill Management",
+ "number_cards": [],
+ "owner": "mubeshersajid@gmail.com",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 2.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Bill Category",
+   "link_to": "Bill Category",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Dashboard",
+   "link_to": "Bill Tracker Summary",
+   "type": "Dashboard"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Monthly Bill Status",
+   "link_to": "Monthly Bill Matrix",
+   "report_ref_doctype": "Bill Payment",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Bill Payment",
+   "link_to": "Bill Payment",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Bill Management"
+}
