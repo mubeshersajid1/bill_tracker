@@ -21,9 +21,9 @@ def execute(filters=None):
     for month in months:
         m_key = month.replace("-", "_").lower()
         columns.extend([
-            {"label": f"<b>{month}</b><br><span style='font-size: 11px; color: #6b7280;'>Amount</span>", "fieldname": f"amount_{m_key}", "fieldtype": "Currency", "width": 115},
-            {"label": f"<b>{month}</b><br><span style='font-size: 11px; color: #6b7280;'>Paid Date</span>", "fieldname": f"date_{m_key}", "fieldtype": "Date", "width": 110},
-            {"label": f"<b>{month}</b><br><span style='font-size: 11px; color: #6b7280;'>Status</span>", "fieldname": f"status_{m_key}", "fieldtype": "Data", "width": 100},
+            {"label": f"<b>{month}</b>", "fieldname": f"{m_key}", "fieldtype": "Data", "width": 150},
+            # {"label": f"<b>{month}</b><br><span style='font-size: 11px; color: #6b7280;'>Paid Date</span>", "fieldname": f"date_{m_key}", "fieldtype": "Date", "width": 110},
+            # {"label": f"<b>{month}</b><br><span style='font-size: 11px; color: #6b7280;'>Status</span>", "fieldname": f"status_{m_key}", "fieldtype": "Data", "width": 100},
         ])
 
     categories = frappe.get_all("Bill Category", fields=["name", "bill_number"])
@@ -51,20 +51,21 @@ def execute(filters=None):
             if p:
                 has_entries = True
                 row[f"doc_{m_key}"] = p.name  # Pass payment doc name for quick edit
-                row[f"amount_{m_key}"] = p.amount
+                row[f"{m_key}"] = p.amount
+                row[f"date_{m_key}"] = p.paid_date or p.due_date
 
                 if p.status == "Paid":
-                    row[f"date_{m_key}"] = p.paid_date or p.due_date
+                    # row[f"{m_key}"] = p.paid_date or p.due_date
                     paid_totals[month] += (p.amount or 0)
                 else:
-                    row[f"date_{m_key}"] = None
+                    # row[f"{m_key}"] = None
                     pending_totals[month] += (p.amount or 0)
                     has_pending = True
 
                 row[f"status_{m_key}"] = p.status
             else:
-                row[f"amount_{m_key}"] = 0
-                row[f"date_{m_key}"] = None
+                # row[f"amount_{m_key}"] = 0
+                # row[f"date_{m_key}"] = None
                 row[f"status_{m_key}"] = "-"
 
         if has_pending:
@@ -77,16 +78,16 @@ def execute(filters=None):
         data.append(row)
 
     if months:
-        data.append({"is_summary": True})
-        row_pending = {"category": "Amount to Paid", "is_summary": True}
-        row_paid = {"category": "Already Paid Amount", "is_summary": True}
+        # data.append({"is_summary": False})  # Empty row for spacing
+        row_pending = {"category": "Amount to Paid", "is_summary": False}
+        row_paid = {"category": "Already Paid Amount", "is_summary": False}
 
         for month in months:
             m_key = month.replace("-", "_").lower()
             row_pending[f"amount_{m_key}"] = pending_totals[month]
             row_paid[f"amount_{m_key}"] = paid_totals[month]
 
-        data.append(row_pending)
-        data.append(row_paid)
+        # data.append(row_pending)
+        # data.append(row_paid)
 
     return columns, data

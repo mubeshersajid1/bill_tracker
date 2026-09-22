@@ -111,36 +111,38 @@ frappe.query_reports["Monthly Bill Matrix"] = {
         // Category Status Badges
         if (column.fieldname === "category" && !data.is_summary) {
             if (data.overall_status === "Paid") {
-                return `<span style="background-color: #d4edda; color: #155724; padding: 4px 8px; border-radius: 4px; font-weight: 600; display: inline-block;">${data.category}</span>`;
+                return `<span style="background-color: #d4edda; color: #155724; padding: 8px 8px; border-radius: 4px; font-weight: 600; display: inline-block;">${data.category}</span>`;
             } else if (data.overall_status === "Pending") {
-                return `<span style="background-color: #fff3cd; color: #856404; padding: 4px 8px; border-radius: 4px; font-weight: 600; display: inline-block;">${data.category}</span>`;
+                return `<span style="background-color: #fff3cd; color: #856404; padding: 8px 8px; border-radius: 4px; font-weight: 600; display: inline-block;">${data.category}</span>`;
             }
         }
 
         // Interactive Clickable Status Badges
-        if (column.fieldname && column.fieldname.startsWith("status_")) {
-            let m_key = column.fieldname.replace("status_", "");
+        // if (column.fieldname && column.fieldname.startsWith("status_")) {
+            let m_key = column.fieldname;
             let docName = data[`doc_${m_key}`];
-            let statusVal = data[column.fieldname];
+            let statusVal = data[`status_${m_key}`];
+            let cellValue = data[`${m_key}`];
+            let paidDate = data[`date_${m_key}`];
 
             if (docName && statusVal !== "-") {
                 let bg = statusVal === "Paid" ? "#d4edda" : "#fff3cd";
                 let color = statusVal === "Paid" ? "#155724" : "#856404";
 
                 return `<span onclick="open_bill_payment_dialog('${docName}')" 
-                              style="background-color: ${bg}; color: ${color}; padding: 4px 8px; border-radius: 4px; font-weight: 600; display: block; text-align: center; cursor: pointer;"
+                              style="background-color: ${bg}; color: ${color}; padding: 8px 8px; border-radius: 4px; font-weight: 600; display: block; text-align: center; cursor: pointer;"
                               title="Click to quick edit payment">
-                              ${statusVal} ✏️
+                              ${cellValue} <br> <small>${paidDate}</small>
                         </span>`;
             }
-        }
+        // }
 
         return value;
     },
     "get_datatable_options": function (options) {
         return Object.assign(options, {
             checkboxColumn: false,
-            cellHeight: 40,
+            cellHeight: 70,
         });
     }
 };
