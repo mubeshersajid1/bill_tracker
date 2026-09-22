@@ -1,0 +1,32 @@
+{
+ "cards": [
+  {
+   "card": "Total Pending"
+  },
+  {
+   "card": "Total Paid"
+  }
+ ],
+ "charts": [
+  {
+   "chart": "Monthly Expenses (Pending)",
+   "width": "Half"
+  },
+  {
+   "chart": "Monthly Expenses (Paid)",
+   "width": "Half"
+  }
+ ],
+ "creation": "2026-09-11 18:55:29.643365",
+ "dashboard_name": "Bill Tracker Summary",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2026-09-22 17:33:37.888490",
+ "modified_by": "Administrator",
+ "module": "Bill Tracker",
+ "name": "Bill Tracker Summary",
+ "owner": "mubeshersajid@gmail.com"
+}
