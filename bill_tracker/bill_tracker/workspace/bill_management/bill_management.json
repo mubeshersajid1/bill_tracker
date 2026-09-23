@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"pJjgjxR-yB\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Bill Management</span>\",\"col\":12}},{\"id\":\"Ni3HkZTmln\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dashboard\",\"col\":3}},{\"id\":\"jlsiQT6RAl\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Bill Category\",\"col\":3}},{\"id\":\"E7mDJMHhnm\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Bill Payment\",\"col\":3}},{\"id\":\"nm_oCidRNH\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Invoice</b></span>\",\"col\":12}},{\"id\":\"1L5s2wJIcb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customers\",\"col\":3}},{\"id\":\"p8ZxDM6KtS\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customer Invoice\",\"col\":3}},{\"id\":\"iLy83iY6t2\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports</b></span>\",\"col\":12}},{\"id\":\"ZSN6wJkLIe\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Monthly Bill Status\",\"col\":3}}]",
+ "content": "[{\"id\":\"pJjgjxR-yB\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Bill Management</span>\",\"col\":12}},{\"id\":\"Ni3HkZTmln\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dashboard\",\"col\":3}},{\"id\":\"jlsiQT6RAl\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Bill Category\",\"col\":3}},{\"id\":\"E7mDJMHhnm\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Bill Payment\",\"col\":3}},{\"id\":\"nm_oCidRNH\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Invoice</b></span>\",\"col\":12}},{\"id\":\"1L5s2wJIcb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customers\",\"col\":3}},{\"id\":\"p8ZxDM6KtS\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customer Invoice\",\"col\":3}},{\"id\":\"iLy83iY6t2\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports</b></span>\",\"col\":12}},{\"id\":\"ZSN6wJkLIe\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Monthly Bill Status\",\"col\":3}},{\"id\":\"RC7CeMagE8\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Monthly Invoice Matrix\",\"col\":3}}]",
  "creation": "2026-09-12 00:39:26.565431",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Bill Management",
  "links": [],
- "modified": "2026-09-23 15:13:42.825132",
+ "modified": "2026-09-23 16:55:31.592401",
  "modified_by": "Administrator",
  "module": "Bill Tracker",
  "name": "Bill Management",
@@ -55,6 +55,14 @@
    "link_to": "Customers",
    "stats_filter": "[]",
    "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Monthly Invoice Matrix",
+   "link_to": "Monthly Invoice Matrix",
+   "report_ref_doctype": "Customer Invoice",
+   "type": "Report"
   },
   {
    "color": "Grey",
