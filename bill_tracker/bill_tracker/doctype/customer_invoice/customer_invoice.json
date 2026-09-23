@@ -1,0 +1,159 @@
+{
+ "actions": [],
+ "allow_auto_repeat": 1,
+ "allow_rename": 1,
+ "creation": "2026-09-23 14:52:44.809269",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_5abo",
+  "amended_from",
+  "customer_id",
+  "invoice_is_recurring",
+  "invoice_recurring_frequency",
+  "column_break_eyje",
+  "invoice_date",
+  "invoice_due_date",
+  "status",
+  "invoice_items_table",
+  "invoice_items",
+  "section_break_juah",
+  "invoice_total_amount",
+  "column_break_bqwy",
+  "invoice_paid_amount",
+  "column_break_lhbu",
+  "invoice_outstanding_amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_5abo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Customer Invoice",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "customer_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Customers",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "invoice_date",
+   "fieldtype": "Date",
+   "label": "Invoice Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "invoice_due_date",
+   "fieldtype": "Date",
+   "label": "Due Date"
+  },
+  {
+   "fieldname": "column_break_eyje",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "invoice_items",
+   "fieldtype": "Table",
+   "label": "List of Items",
+   "options": "Invoice Items",
+   "reqd": 1
+  },
+  {
+   "fieldname": "invoice_items_table",
+   "fieldtype": "Section Break",
+   "label": "Invoice Items"
+  },
+  {
+   "fieldname": "section_break_juah",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_bqwy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nUnpaid\nPartially Paid\nPaid\nOverdue"
+  },
+  {
+   "default": "0",
+   "fieldname": "invoice_is_recurring",
+   "fieldtype": "Check",
+   "label": "Is Recurring?"
+  },
+  {
+   "fieldname": "invoice_recurring_frequency",
+   "fieldtype": "Select",
+   "label": "Frequency",
+   "options": "Monthly\nQuarterly\nYearly"
+  },
+  {
+   "fieldname": "invoice_total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "invoice_paid_amount",
+   "fieldtype": "Currency",
+   "label": "Total Paid",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_lhbu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "invoice_outstanding_amount",
+   "fieldtype": "Currency",
+   "label": "Total Outstanding ",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-09-23 15:16:09.294870",
+ "modified_by": "Administrator",
+ "module": "Bill Tracker",
+ "name": "Customer Invoice",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

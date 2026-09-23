@@ -1,0 +1,13 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Bill Payment",
+  "enabled": 1,
+  "modified": "2026-09-22 17:40:28.428820",
+  "module": null,
+  "name": "Bill Payment",
+  "script": "frappe.listview_settings['Bill Payment'] = {\r\n    refresh: function(listview) {\r\n        listview.page.add_inner_button(__('Generate Monthly Bills'), function() {\r\n            frappe.prompt(\r\n                [\r\n                    {\r\n                        label: 'Billing Month',\r\n                        fieldname: 'billing_month',\r\n                        fieldtype: 'Select',\r\n                        options: [\r\n                            'Jan-2026', 'Feb-2026', 'Mar-2026', 'Apr-2026', \r\n                            'May-2026', 'Jun-2026', 'Jul-2026', 'Aug-2026', \r\n                            'Sep-2026', 'Oct-2026', 'Nov-2026', 'Dec-2026'\r\n                        ],\r\n                        default: 'Sep-2026',\r\n                        reqd: 1\r\n                    }\r\n                ],\r\n                function(values) {\r\n                    frappe.call({\r\n                        method: 'bill_tracker.api.generate_monthly_bills',\r\n                        args: {\r\n                            billing_month: values.billing_month\r\n                        },\r\n                        freeze: true,\r\n                        freeze_message: __('Generating bills...'),\r\n                        callback: function(r) {\r\n                            if (r.message) {\r\n                                frappe.msgprint(r.message);\r\n                                listview.refresh();\r\n                            }\r\n                        }\r\n                    });\r\n                },\r\n                __('Select Billing Month'),\r\n                __('Generate')\r\n            );\r\n        });\r\n    }\r\n};",
+  "view": "List"
+ }
+]
